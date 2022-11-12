@@ -1,0 +1,607 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857143; overflow-x: hidden; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; tab-size: 4; background-position: inherit; background-repeat: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; word-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) { 
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-variant-caps: inherit; font-weight: inherit; font-stretch: inherit; line-height: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right-width: 0px; background-color: inherit; }
+.CodeMirror-linenumber { }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; position: relative !important; background-position: inherit; background-repeat: inherit; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; background-position: 0px 0px; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print { 
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background-color: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) { 
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background-color: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; }
+a.md-print-anchor { white-space: pre !important; border: none !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; text-shadow: initial !important; background-position: 0px 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom-width: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background-color: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print { 
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; background-position: inherit; background-repeat: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) { 
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) { 
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.428571429rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ''; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ''; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left-width: 28px; border-left-style: solid; border-left-color: transparent; border-right-width: 28px; border-right-style: solid; border-right-color: transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ''; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right-width: 8px; border-right-style: solid; border-right-color: transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: '−'; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+/* open-sans-regular - latin-ext_latin */
+  /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+  html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, 'Segoe UI Emoji', sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table th:first-child,
+table td:first-child {
+    margin-top: 0;
+}
+table th:last-child,
+table td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+    pre {
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+/*.html-for-mac {
+    --item-hover-bg-color: #E6F0FE;
+}*/
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+    opacity: 0.4;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+.menu-item-container a.menu-style-btn {
+    background-color: #f5f8fa;
+    background-image: linear-gradient( 180deg , hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0)); 
+}
+
+
+ @media print { @page {margin: 0 0 0 0;} body.typora-export {padding-left: 0; padding-right: 0;} #write {padding:0;}}
+</style><title>notes</title>
+</head>
+<body class='typora-export'><div class='typora-export-content'>
+<div id='write'  class=''><div class='md-toc' mdtype='toc'><p class="md-toc-content" role="list"><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n2"><a class="md-toc-inner" href="#前言">前言</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n4"><a class="md-toc-inner" href="#主体">主体</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n6"><a class="md-toc-inner" href="#唯物辩证法">唯物辩证法:</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n21"><a class="md-toc-inner" href="#历史唯物主义认为">历史唯物主义认为:</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n55"><a class="md-toc-inner" href="#名词解释">名词解释</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n207"><a class="md-toc-inner" href="#资本主义">资本主义</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n223"><a class="md-toc-inner" href="#质-量">质-量</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n290"><a class="md-toc-inner" href="#毛中特">毛中特</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n341"><a class="md-toc-inner" href="#做题技巧">做题技巧</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n359"><a class="md-toc-inner" href="#易错">易错</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n377"><a class="md-toc-inner" href="#思考">思考</a></span></p></div><h2 id='前言'><span>前言</span></h2><p><span>凡事先了解基本架构目录</span></p><h2 id='主体'><span>主体</span></h2><p><span>辩证法：任何已知的事物都是运动状态,事物直接存在联系</span></p><h3 id='唯物辩证法'><span>唯物辩证法:</span></h3><ol start='' ><li><span>对立统一:运动中的事物形成，既对立又统一的矛盾</span></li></ol><ul><li><span>对立:作用力-反作用力</span></li><li><span>同一:它们同时处于一个运动物质中,当其中一个力消失，另一个也不存在</span></li></ul><ol start='2' ><li><span>质量互变:数量\运动的变化会导致性质变化(水喝多了会中毒)</span></li><li><span>否定之否定: 事物发展过程中因为负面因素累积而否定,而否定到了新的阶段又产生新的负面因素,从而产生否定之否定,最终形成周期，但是每阶段的否定前的性质不一样了(原始社会没有空气污染，但寿命短--否定原始社会--&gt;工业化时期产生空气污染，寿命相对长--否定工业化社会--&gt;此时人们发现空气污染会阻碍寿命进一步提高-&gt;进入环保时代-&gt;? ,,,,, 从上面总体看环保时代同样是减少污染，但是生产力大幅度提高)</span></li></ol><p><span>上面1-2-3都是基于前面的所有结论所得</span></p><h3 id='历史唯物主义认为'><span>历史唯物主义认为:</span></h3><ol start='' ><li><span>生产力决定生产关系</span></li></ol><ul><li><p><span>生产力:衣食住行</span></p></li><li><p><span>生产关系: 生产过程中各个劳动者之间的关系</span></p></li><li><p><span>生产方式: 生产力+生产关系</span></p></li><li><p><span>生产资料:工具、原料、技术、资本、能源</span></p><ul><li><span>(资本主义-&gt;生产资料属于资产阶级)</span></li></ul></li><li><p><span>生产效率: 生产力+劳动者+生产资料</span></p></li></ul><p><strong><span>区别社会x x</span></strong></p><ul><li><span>社会历史发展**的决定力量 : 生产方式</span></li><li><span>社会存在 : 社会物质生活条件:物质生产方式、自然地理 环境和人口因素</span></li><li><span>社会关系：血缘关系、同事关系、血缘关系是客观存在的，同事关系是主观意识的</span></li><li><span>社会历史存在和发展的前提: 现实的人及其活动</span></li></ul><ol start='2' ><li><h5 id='经济基础决定上层建筑'><span>经济基础决定上层建筑</span></h5></li></ol><p><span>生产力-&gt;生产关系</span>
+<span>石器的产生-&gt;产生了原始部落制-&gt;共产</span>
+<span>金属工具-&gt;奴隶制-&gt;奴隶主-奴隶</span>
+<span>技术的发展完善-&gt;封建制-&gt;封建主-佃农</span>
+<span>蒸汽机器-&gt;资本主义制-&gt;资本家-劳工</span></p><p><span>目前资本主义的否定之否定表现在垄断主义</span></p><p><span>无产阶级-中产阶级-资本家</span></p><h2 id='名词解释'><span>名词解释</span></h2><p><strong><span>存在</span></strong><span>:这块东西好硬(从人来到这个世界的首次见闻)</span></p><p><strong><span>意识</span></strong><span>:它叫石头(这块东西这么硬那就叫它石头好了,第二天我又看到了它，哦!它叫石头，它很硬)</span></p><p><strong><span>意识的相对独立性</span></strong><span>:有的乞丐有着超然的精神世界</span></p><p><span>马克思主义:科学性与革命性</span></p><p><strong><span>形而上学</span></strong><span>: &quot;上&quot;现象之上或者背后的东西-&gt;本质，&quot;下&quot;使得现象显现出来的东西-&gt;物体</span></p><ul><li><span>“形而上学”马哲说法，黑格尔(马斯克老师)批评传统形而上学的研究方法是孤立的、静止的，根本无法研究出世界的本体是什么，他企图用辩证法来突破</span></li><li><span>后来，马克思沿着黑格尔的思路，认为“形而上学”是“孤立、片面、静止”的研究方法，要用“辩证法”来研究</span></li><li><span>“形而上学”本义就是“本体论哲学”</span></li></ul><ul><li><span>1831年法国里昂工人举行了第一次起义</span></li><li><span>1834年举行第二次起义</span></li><li><span>1836年英国爆发了长达十余年、 声势浩大的全国性的工人运动— 宪章运动</span></li><li><span>1844年德国的西里西亚纺织工人举行起义。</span></li><li><span>1844年2月《德法年鉴》马克思和恩格斯发表在上的论文表明</span></li><li><span>1844年8月底,马克思和恩格斯在巴黎会面,开始了毕生的合作,巴黎合写了《神圣家族》,布 鲁塞尔合写了《德意志意识形态》</span></li><li><span>1847年《哲学的贫困》是马克思为批判蒲鲁东的《贫困的哲学》而写的著作</span></li><li><span>1848年2月《共产党宣言》发表</span></li><li><span>1867—1894年分为三卷出版《资本论》</span></li><li><span>1871年3月巴黎工人起义,《法兰西内战》,</span></li><li><span>几年后《哥达纲领批判》</span></li><li><span>1876—1878年恩格斯写出了《反杜林论》</span></li></ul><ul><li><p><span>《资本论》“工人阶级的圣经”</span></p></li><li><p><span>《反杜林论》“百科全书”</span></p></li><li><p><span>《共产党宣言》标志马克思主义的公开问世</span></p></li><li><p><span>《德意志意识形态》首次系统阐述历史唯物主义基本原理</span></p></li><li><p><strong><span>哲学基本问题：</span></strong></p><ol start='' ><li><span>第一方面：世界的本原归结为物质还是精神</span></li><li><span>第二方面：存在和思维是 否具有同一性（可知论和不可知论）</span></li></ol></li><li><p><strong><span>唯心论:</span></strong></p><ol start='' ><li><span>主观唯心论:把世界的本原归结为个人的感觉或意识</span></li><li><span>客观唯心论:把世界的本原归结为超自然、超人类的所谓客观精神</span></li></ol></li><li><p><strong><span>真象和假象</span></strong><span>:都是本质的表示，只不过是侧面歪曲的表现和正面的表现</span></p></li><li><p><strong><span>内容与形式的矛盾运动中</span></strong><span>:内容较为易变，形式则较为稳定(和之前理解的不一样)</span></p></li><li><p><strong><span>矛盾</span></strong><span>:世间万物都是成对存在（上-下就形成矛盾）</span></p><ul><li><p><span>同一性</span></p><ul><li><span>相互依存:必须成对存在，没有上就没有下</span></li><li><span>相互贯通:上在不同时刻也可变为下。互相转换的关系(！！！比如：男人和女人形成矛盾，在现实不可转换，但是在哲学中是可以转换的，至于怎么转，需要通过哲学的思维去悟，在考试中矛盾是一定可以互相转换的)</span></li></ul></li><li><p><span>斗争性</span></p><ul><li><span>对抗性：矛盾无法解决（资本主义-工人-劳动者）</span></li><li><span>非对抗：矛盾可以缓和</span></li></ul></li><li><p><span>同一、斗争关系</span></p><ul><li><span>对立统一 ：一个乞丐不会羡慕其他人的富足（不满足同一性，所有没有斗争性），但是这个乞丐会嫉妒今天比他收获更多的乞丐（满足同一性，有斗争性）</span></li></ul></li></ul></li><li><p><strong><span>唯物辩证法:</span></strong><span> 既是客观辩证法，又是主观辩证法，是二者的有机统一</span></p></li><li><p><strong><span>真理</span></strong><span>: 具有客观性，是绝对性和相对性的辩证统一</span></p></li><li><p><strong><span>真理</span></strong><span>: 是主观与客观相符合，谬误是主观与客观相背离</span></p></li><li><p><strong><span>真理与谬误的区别</span></strong><span>: 在于主观是否与客观相符(和真像、假像)</span></p></li><li><p><strong><span>旧唯物主义</span></strong><span>之所以是半截子的唯物主义，是因为自然观上的唯物主义，历史观上的唯心主义</span></p></li><li><p><strong><span>生产方式</span></strong><span>: 生产力和生产关系的总和</span></p></li><li><p><strong><span>生产关系</span></strong><span>:指人与人的关系</span></p></li><li><p><strong><span>生产力</span></strong><span>:体现的是人与自然的关系(被坑了,注意是“自然”，不是“社会”)------这里的关系意思是表现，其实是指物质力量，完整表述:</span></p><ul><li><span>生产力是人类在生产实践中形成的改造和影响自然以使其适合社会需要的物质力量</span></li></ul></li><li><p><strong><span>社会历史性</span></strong><span>: 实践是主体社会关系中从事的活动，受着社会条件的制约，随社会变化和历史的变化发展</span></p></li><li><p><strong><span>商品必须同时具有使用价值和价值</span></strong></p><ul><li><span>获得商品的&quot;价值&quot;就必须放弃商品的&quot;使用价值&quot;;</span></li><li><span>得到商品的&quot;使用价值&quot;就不能得到商品的&quot;价值&quot;</span></li></ul></li><li><p><strong><span>具体劳动</span></strong><span>对应的是:</span></p><ol start='' ><li><span>形成商品的使用价值;</span></li><li><span>转移生产资料的价值到新产品中去</span></li></ol></li><li><p><strong><span>抽象劳动</span></strong><span>对应的是:</span></p><ol start='' ><li><span>形成商品的价值;</span></li><li><span>把劳动力商品的价值再生产(再创造) 出来。</span></li></ol></li><li><p><strong><span>不变资本</span></strong><span>:以生产资料形态存在的资本，它通过工人的具体劳动转移到新产品中去(工厂加工的原材料费用)</span></p></li><li><p><strong><span>可变资本</span></strong><span>:是用来购买劳动力的那部分资本，不会被转移到新产品中去(雇佣人员费用)</span></p></li><li><p><strong><span>劳动力的价值</span></strong><span>(就是工人工资) : 由生产它所需要的社会必要劳动时间决定</span></p></li><li><p><strong><span>私人劳动和社会劳动</span></strong><span>的矛盾 : 是商品经济的其他一切矛盾的基础</span></p></li><li><p><strong><span>劳动力商品的价值</span></strong><span>(就是工人做出来的东西的价格定价) :</span></p><ol start='' ><li><span>维持劳动者本人</span></li><li><span>家属生存所必需的生活资料的价值</span></li><li><span>劳动者接受教育和训练所支出的费用</span></li></ol></li><li><p><strong><span>资本价值构成</span></strong><span>: 不变资本和可变资本之间的比例</span></p></li><li><p><strong><span>利润</span></strong><span>：剩余价值一定会再次利用生产、扩大规模，如果不利用再次生产那就叫利润</span></p></li></ul><h3 id='资本主义'><span>资本主义</span></h3><p><span>资本主义国家的</span><strong><span>对内职能</span></strong><span>是政治统治,</span><strong><span>对外</span></strong><span>是国家对内政治统治职能的延伸</span></p><ul><li><p><strong><span>垄断组织</span></strong><span>（卡特尔、辛迪加、托斯拉）本质上都是通过联合来操控垄断价格以攫(jue)取高额垄断利润</span></p></li><li><p><strong><span>金融寡头</span></strong><span>是指操纵国民经济命脉，并在实际上控制国家政权的少数垄断资本家或生断资本家集团。控制了整个国家的经济命脉和上层建筑，是垄断本主义国家事实上的统治者。</span></p></li><li><p><span>金融赛头在中实现统治的形式:</span></p><ul><li><span>经济领域 : “参与制”(金融寡头通过掌握一定数量的股票来层层控制企业的制度)，</span></li><li><span>国家机器 : 同政府的“个人联合”(亲自担任或指派代理人担任政府要职)</span></li><li><span>其他 : 通过建立政策咨询机构，掌握新闻、科教、文化等来左右和影响内政外交与社会生活。</span></li></ul></li></ul><h3 id='质-量'><span>质-量</span></h3><ul><li><p><span>区分质是认识量的前提，考察量是认识质的深化</span></p><ul><li><span>错误说法: 考察量是认识质的前提，区分质是认识量的深化</span></li></ul></li><li><p><strong><span>实践活动</span></strong><span>:人的实践活动是一种有意识、有目的的活动。目的性是能动性的主要表现。因此是否具有目的性不能用来判断一种活动能否被称为</span><strong><span>实践活动</span></strong></p></li><li><p><span>感性认识-&gt;理性认识(缺一就错):</span></p><ol start='' ><li><span>实践</span></li><li><span>运用理论思维和科学抽象，经过理性思考的作用</span></li></ol></li><li><p><strong><span>实践</span></strong><span>:物质实践(用手摸,真的很丝滑?)、社会政治实践(调研,所有玉石都是丝滑的?)、科学文化实践(做实验,玉石为什么丝滑?)</span></p><ul><li><span>以上基于环境:&quot;玉石是丝滑的&quot;</span></li></ul></li><li><p><strong><span>历史人物</span></strong><span>:只有代表前一种力量的人才属于历史的创造者, 不管什么样的历史人物，在历史上发挥什么样的作用，都要受到社会发展客观规律的制约，而不能决定和改变历史发展的总进程和总方向</span></p></li><li><p><strong><span>价值</span></strong><span> : 商品的本质属性</span></p></li><li><p><strong><span>使用价值</span></strong><span> : 能鼓满足需求的商品</span></p></li><li><p><strong><span>交换价值</span></strong><span> : 价值的表现形式</span></p></li></ul><ol start='' ><li><span>钓竿售价100元，因为它能帮助渔夫更好的钓鱼,钓竿相对于渔夫来说有&quot;使用价值&quot;，而相对于程序员来说鱼竿没有&quot;使用价值&quot;</span></li><li><span>鱼竿是经过劳动制造的，花费了劳动成本所以它从木棍到鱼竿产生了质的变化，所以鱼竿具有&quot;价值&quot;,且有&quot;价值&quot;的一定有&quot;使用价值&quot;</span></li><li><span>当渔夫购买了这个钓竿后那么它的&quot;交换价值&quot;就是100元</span></li></ol><p>&nbsp;</p><p><span>####### 我不会推荐“背的方式去学习”，我自己也背不了</span>
+<span>概念理解，名词理解，是最重要的</span></p><p>&nbsp;</p><p><span>资本的有机构成: 由资本技术构成决定并反映技术构成变化的资本价值构成</span></p><p><span>利润转化为平均利润，价值才转化为生产价格</span></p><ul><li><span>早期的国际垄断同盟主要是国际卡特尔。</span></li><li><span>当代国际垄断同盟的形式以国家垄断 资本主义的国际联盟为主,国家垄断资本主义的国际联盟是由一些资本主义国家的政府出面缔结 协定所组成的国际经济集团</span></li></ul><p><span>资本主义所有制 :</span></p><ol start='' ><li><span>资本家个人所有制</span></li><li><span>集团所有制</span></li><li><span>国家所有制</span></li></ol><p><span>经营方式</span></p><ol start='' ><li><span>独资经营</span></li><li><span>合资经营或股份经营</span></li><li><span>国家经营三种方式</span></li></ol><p><span>公有制与国有制不是一回事,资本主义国家也有国有企业，那种企业当然不是公有制</span></p><p><span>我的宪法规定:国有经济，即社会主义全民所有制经济,这里就代表公有制经济</span></p><p><span>做政治题目的时候，每次遇到资本主义和社会主义就会自然而然的想到美国和中国，仔细相信美国确实和理论上面讲的一样，也符合现在、和历史，但是想到中国就会发现很多地方都有疑问，或者说是现实与理论不符合,然后就会想“中国特色社会主义”的&quot;特色&quot;是什么？这一大特色还真实全世界独一家啊,无非就是披着社会主义的权贵资本主义国家,嘴上喊着公有制，个个都想着私有化</span></p><p><span>我觉得我政治不好是有原因的，看待事情太单纯，没有看到事物的本质</span></p><p><span>苏联模式的形成在列宁逝世之后</span></p><h3 id='毛中特'><span>毛中特</span></h3><p><span>1927八七会议-&gt;政权是由枪杆子中取</span>
+<span>1935遵义回忆-&gt;毛泽东思想，地位</span>
+<span>1938六届六中全会-&gt;马克思主义中国化</span></p><p><span>毛泽东思想-&gt;中国革命的新道路</span></p><p><span>马克思主义中国化-&gt; 毛 泽 东 思 想 -&gt;实 事 求 是 、群 众 路 线 、独 立 自 主</span></p><p><strong><span>反帝反封建</span></strong><span>:就是资产阶级民主革命，</span></p><p><strong><span>反资本主义</span></strong><span>:就是社会主义革命</span></p><p><strong><span>土地革命</span></strong><span>:也是资产阶级民主主义性质的革命，因为革命的任务是反帝反封建，并不是反资本主义</span></p><p><span>&quot;新民主主义革命”有亇“新”字.但其性质依然是资产阶级民主主 义 革 命</span></p><p><span>新民主主义革命时期:</span></p><ul><li><span>&quot;消灭&quot;封建的土地制度</span></li><li><span>抗曰战争时期&quot;削弱&quot;封建的土他制度</span></li></ul><p><span>近代时间线:</span></p><ul><li><span>1839 - 虎门硝烟</span></li><li><span>1853 - 太平天国</span></li><li><span>1861 - 洋务运动--八国、条约、半殖半封</span></li><li><span>1911 - 辛亥革命 </span></li><li><span>1914-18 一战 </span></li><li><span>1919 - 五四</span></li><li><span>1921 - 中共成立 </span></li><li><span>1926 - 北伐\共产党逃亡(南昌、秋收、井冈山) </span></li><li><span>1937 - 抗日战争 </span></li><li><span>1939-1945 -二战</span></li><li><span>1945 - 内战 </span></li><li><span>1957-1960 大跃进 </span></li><li><span>1966-1976 文革</span></li></ul><p><span>邓小平理论</span></p><ul><li><span>形成：十二大 “中国特色社会主义” 主题</span></li><li><span>成熟：1992年邓小平南方谈话</span></li></ul><p>&nbsp;</p><p>&nbsp;</p><h2 id='做题技巧'><span>做题技巧</span></h2><p><span>一般来说多选题答案只有一个的几乎没有(我没见过)，答案为4个的不多，答案为3个的最多,如果发现4个答案全对那就逐字眼的分析看能不能排除一个，实在不能那就是4个答案</span></p><p><span>但凡遇到答案在“客观”、“规律”、“根本”、“质”等字眼一定要看主语是意识还是存在，意识就错了</span></p><p><span>题目中出现&quot;真理&quot;，直接去答案找&quot;实践&quot;，反之亦然</span></p><p><span>马克思主义最核心的就是&quot;实践&quot;</span></p><p><span>改进技术。。改进社会生产必要时间，答案直接找超额剩余价值</span></p><p><span>资本累积，答案找剩余价值</span></p><ul><li><span>根本原因: 找经济</span></li><li><span>直接原因: 直接引发的偶然性因素</span></li><li><span>主要原因: 引发的主观、客观</span></li></ul><p><span>题目中的&quot;历史性&quot;一般是指在历史中发展过来的，往后可能存在也可能消亡</span></p><p>&nbsp;</p><h2 id='易错'><span>易错</span></h2><p><span>自然地理环境不能脱离社今生产而发生作用 (我之前理解的是天然森林植物可以产生氧气，但答案是不能脱离)</span></p><ul><li><p><span>170。 国家垄断资本主义形成和发展的原因有:</span>
+<span>A.科技近步和生产社会化程度进一步提高的产物 B.资本主义基本矛盾进一步尖锐化的结果</span>
+<span>C.应对经济波动和经济危机深化的要求 D.缓和社会牙盾、协调利益关系的要求</span></p></li><li><p><span>多选133: &quot;劳动力&quot;和&quot;劳动力商品&quot;都是特殊的商品,它的使用价值是价值的源泉，它在消费过程中能够创造新的价值,而且这个新的价值比 劳动力本身的价值更大(价值增殖功能)。</span></p></li><li><p><span>多选147:资本主义条件下的生产自动化只是意味着剩余价值生产所使用的生产工具更加先进了，不论是机器人、自动化生产线，还是“无人工厂”，它们本质上依然是物化劳动或不变资本的实物形式。它们参加产品生产时,只是把原有的价值转移到产品中去，而不创造新价值，更不能创造剩余价值。在资本主义生产过程中，资本有机构成呈现不断提高的趋势，这是由资本无限追逐剩余价值的本性决定的</span></p></li><li><p><span>多选178:国际金融危机不是经济全球化发展的必然产物，而是金融资本过度逐利、金融监管严重 缺失的结果。把困扰世界的问题简单归咎于经济全球化，既不符合事实，也无助于问题解决。</span></p></li><li><p><span>多选202:苏联的农业合作化是在20世纪30年代前中期完成的，苏联模式也是在这个时期形成的。A、D错误</span></p></li><li><p><span>126。同一劳动在同一时间内，当部门劳动生产率提高时会使  A.B</span></p><p><span>A。单位商品的价值量降低 B。 商品的使用价值量增加</span></p><p><span>C。 单位商品的价值量不变 D。 单位商品的价值量提高</span></p><p><span>解释:同一劳动在同一时间内，当部门劳动生产率提高时,生产商品的社会必要劳动时间缩短，单位商品的价值量降低,商品的数量即使用价值量增 加 ，商 品 的 价 值 总 量 不 变</span></p></li></ul><h2 id='思考'><span>思考</span></h2><p><span>孟德斯鸠认为&quot;酷热有害于力量和勇气，寒冷赋子人类头脑和身体以某种力量，使人们能够从事持久、艰巨、伟大而勇敢的行动，因此，“热带民族的懦粥往往使他们陷于双隶地位，而寒带民族的强悍则使他们保持自由的地位。</span></p><p><span>心得： 寒冷确实能让人头脑清晰-学数学的时候开着空调吧,炎热会让人烦躁</span></p></div></div>
+</body>
+</html>
