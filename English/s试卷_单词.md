@@ -263,10 +263,8 @@ portion
 //部分
 sugar and oil
 //糖和油
-takeaway food
-//外卖食品
-cheaply
-//便宜的
+cheap
+//便宜
 ```
 
 ```less
@@ -281,75 +279,78 @@ cheaply
 
 ## C
 
+
+
 ```less
-each other
-//彼此之间
-independent of
+each other 
+//彼此
+independent of 
 //独立于
-recent
-//近期
-still
+recent 
+//最近的
+still 
 //仍然
 own patterns 
 //自己的模式
-experts
+experts 
 //专家
-perhaps
-//也许吧
-Soon afterwards
+perhaps 
+//也许
+Soon afterwards 
 //不久之后
-settling down
+settling down 
 //安顿下来
-farmers
+farmers 
 //农民
-settled
-//已解决
-In recent centuries
-//在最近几个世纪里
-trade ，industrialisation
-//贸易、工业化
+settled 
+//定居
+In recent centuries 
+//近百年来
+trade ，industrialisation 
+//贸易，工业化
 nation-state 
 //民族国家
-spread
-//展开
-universal compulsory education
+spread 
+//传播
+universal compulsory education 
 //普及义务教育
-globalisation  and better communications
-//全球化和更好的通信
-decades
-//数十年
-caused
-//引起
-dominant
-//占主导地位
-distribution
-//分布
-hugely uneven
-//极不平坦
-general,generation
-//一般,世代
+globalisation  and better communications 
+//全球化和更好的沟通
+decades 
+//几十年
+caused 
+//引起的
+dominant 
+//主导的
+distribution 
+//分配
+hugely uneven 
+//极不平衡
+general,generation,generate 
+//一般,生成,生成
 mild zones 
-//温带
-relative
-//相对
-hot，wet
-//又热又湿
-median number
+//温和地带
+relative 
+//相对的
+hot，wet 
+//热，湿
+
+median number 
 //中位数
-half
+half 
 //一半
-total of
-//总计
-elderly
-//老人
-remaining
-//剩余
-seems
+total of 
+//总数是
+elderly 
+//老年的
+remaining 
+//其余的
+seems 
 //似乎
-survival
+survival 
 //生存
-energy
-//能量
+energy 
+//活力
 ```
 
 
@@ -364,40 +365,35 @@ energy
 ## D
 
 ```less
-business，basic，base
-//生意，基本，基地
 culture
 //文化
 gets rid
 //摆脱
 worn technology
-//磨损技术
+//破旧的技术
 first sight
 //第一眼
 shiny and new
-//闪闪发亮，新奇
+//闪亮的和新的
 consume
-//消费
-energy
-//能量
+//消耗
 figure out 
-//算出
+//弄清楚
 colleagues ,college
-//同事们，大学
+//同事，大学
 environmental costs
 //环境成本
 evolved since
-//从那以后演变
-grouped by generation
-//按世代分组
-arrived
-//抵达
+//进化自
+arrive
+//到达
 suddenly one day
 //突然有一天
 average
-//平均值
-electronic
-//电子学
+//平均
+electric
+//电
+
 analysis
 //分析
 contribution
@@ -405,8 +401,8 @@ contribution
 greenhouse gas
 //温室气体
 went up 
-//往上走
-explored
+//上升
+explore
 //探索
 ```
 
@@ -420,48 +416,49 @@ explored
 ## 第二节
 
 ```less
-fundamental
-//基本原理
+fundament
+//基本
 design
 //设计
 grasp
-//抓紧
-Professional
-//专业型
-techniques
-//技法
+//抓牢
+Profession
+//专业
+technique
+//技巧
 approach
-//方法
+//方法、靠近
 complex
-//复合体
-decisions
-//决定
+//ffmpeg-复合器
+decision(n)\ decide(v)
+//决心
 spots
 //斑点
-pillows
+pillow
 //枕头
 expensive significant
-//昂贵且意义重大
+//昂贵\有意义的
 furniture
-//家俱
+//家具
+
 pieces , price
-//单件，价格
+//件数，价格
 require
 //要求
 commitment
 //承诺
 effect
-//效应
+//影响
 concern
-//令人担忧的问题
+//关心
 ceilings
 //天花板
 effort
 //努力
 expense
 //费用
-experimenting
-//实验
+experiment
+//试验
 ```
 
 ```less
