@@ -1,14 +1,8 @@
 
 
-### [scan](file:///private/tmp/yang-datong.github.io/health/gwongzau-hc/scan.html)
+## [scan](https://yang-datong.github.io/health/gwongzau-hc/scan.html)
 
-
-- [index](file:///private/tmp/yang-datong.github.io/health/index.html)
-
-
-- [Math-极限](https://yang-datong.github.io/health/index.html)
-
-- [Math-极限](https://yang-datong.github.io/health/index.html)
+- [index](https://yang-datong.github.io/health/index.html)
 
 
 - [Math-极限](https://yang-datong.github.io/Math/j极限/j极限.html)
