@@ -1,6 +1,4 @@
----
-layout: default
----
+
 
 # Armv8中在16bit数据中使用Dotprod的方法
 
