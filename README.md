@@ -1,8 +1,5 @@
 ---
-layout: post
-title:  "Armv8中在16bit数据中使用Dotprod的方法"
-date:   2025-11-06 10:30:00 +0800
-categories: jekyll update
+layout: default
 ---
 
 # Armv8中在16bit数据中使用Dotprod的方法
